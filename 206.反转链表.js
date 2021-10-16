@@ -47,9 +47,9 @@ var reverseList = function (head) {
 var reverseList = function (head) {
 
   if (!head || !head.next) return head;
-  let reverseHead = reverseList(head.next);
+  let next = head.next
+  let reverseHead = reverseList(next);
   head.next = null
-  head.next.next = head
+  next.next = head
   return reverseHead
-
 };
