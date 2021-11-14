@@ -6,37 +6,41 @@
 
 // @lc code=start
 
-var MinStack = function() {
-
+var MinStack = function () {
+  this.stack = []
 };
 
 /** 
  * @param {number} val
  * @return {void}
  */
-MinStack.prototype.push = function(val) {
-
+MinStack.prototype.push = function (val) {
+  const node = {
+    val: val,
+    min: this.stack.length?Math.min(this.getMin(), val):val
+  }
+  this.stack.push(node)
 };
 
 /**
  * @return {void}
  */
-MinStack.prototype.pop = function() {
-
+MinStack.prototype.pop = function () {
+  this.stack.pop()
 };
 
 /**
  * @return {number}
  */
-MinStack.prototype.top = function() {
-
+MinStack.prototype.top = function () {
+  return this.stack[this.stack.length - 1].val
 };
 
 /**
  * @return {number}
  */
-MinStack.prototype.getMin = function() {
-
+MinStack.prototype.getMin = function () {
+  return this.stack[this.stack.length - 1].min
 };
 
 /**
