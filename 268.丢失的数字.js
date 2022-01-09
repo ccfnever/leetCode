@@ -19,9 +19,7 @@ var missingNumber = function (nums) {
   nums.forEach(c => {
     if (map[c]) delete map[c]
   })
-
   return Object.keys(map)[0]
-
 
 };
 // @lc code=end
