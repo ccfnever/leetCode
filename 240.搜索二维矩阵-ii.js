@@ -21,11 +21,12 @@ var searchMatrix = function (matrix, target) {
   let pointN = n - 1
 
   while (pointM < m && pointN >= 0) {
+    const current = matrix[pointM][pointN]
     // 大于目标，左移
-    if (matrix[pointM][pointN] > target) {
+    if (current > target) {
       pointN--
     // 右移
-    } else if (matrix[pointM][pointN] < target) {
+    } else if (current < target) {
       pointM++
     } else {
       return true
