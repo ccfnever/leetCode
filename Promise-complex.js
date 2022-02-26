@@ -158,3 +158,24 @@ const p1 = new MyPromise((resolve, reject) => {
   console.log('val2', val)
 })
 console.log('start')
+
+
+const assert = new Proxy({}, {
+  get: function () {
+
+  },
+  set: function (target, key, value) {
+    console.log('========')
+    console.log(target, key, value)
+  }
+})
+
+const aaa = '我没有钱'
+
+assert['对,你没有钱'] = aaa === '我没有钱'
+
+
+for(let i =0;i<10;i++){
+  i++
+}
+console.log(i)
