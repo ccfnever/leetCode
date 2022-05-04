@@ -32,6 +32,7 @@ var climbStairs = function (n) {
   }
   
 };
+
 // @lc code=end
 
 const n = 7
